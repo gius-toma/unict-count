@@ -15,4 +15,8 @@ public:
     T get_data() {
         return this->m_data;
     }
+
+    bool operator==(Vertex<T> const& x) {
+        return this->m_data == x.m_data;
+    }
 };
