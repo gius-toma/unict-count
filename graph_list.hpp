@@ -1,6 +1,6 @@
 #pragma once
 
-#include "graph_list.hpp"
+#include "graph_vertex.hpp"
 
 template <typename T>
 class Graph_List {
@@ -12,11 +12,7 @@ class Graph_List {
 public:
     Graph_List(bool is_oriented=true) : n_vertex(0), is_oriented(is_oriented) {}
 
-    void add_vertex(T const& data) {
-        add_vertex(new Vertex<T>(data));
-    }
-
-    void add_vertex(Vertex<T>* vertex) {        
+    void add_vertex(T const& vertex) {        
         Graph_Vertex<T> add(vertex);
         m_vertices.insert(add);
         ++n_vertex;
@@ -34,13 +30,13 @@ public:
         }
     }
 
-    Node<Graph_Vertex<T>>* search(T const& data) const {
+    Node<Graph_Vertex<T>>* search(T const& data) {
         if(this->n_vertex == 0)
             return nullptr;
 
-        Node<GraphVertex<T>>* ptr = this->m_vertices.get_head();
+        Node<Graph_Vertex<T>>* ptr = this->m_vertices.get_head();
         while (ptr) {
-            if (key == ptr->get_data().get_head()->get_data())
+            if (data == ptr->get_data().get_head()->get_data())
                 return ptr;
             ptr = ptr->get_next();
         } return nullptr;

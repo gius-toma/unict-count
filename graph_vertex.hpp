@@ -1,7 +1,7 @@
 #pragma once
 
 #include "vertex.hpp"
-#include "unict-list/list.h"
+#include "unict-list/list.cpp"
 
 template <typename T>
 class Graph_Vertex : public List<T> {
