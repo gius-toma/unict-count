@@ -12,13 +12,14 @@ class Graph_List {
 public:
     Graph_List(bool is_oriented=true) : n_vertex(0), is_oriented(is_oriented) {}
 
-    bool add_vertex(T const& data) {
-        return add_vertex(new Vertex<T>(data));
+    void add_vertex(T const& data) {
+        add_vertex(new Vertex<T>(data));
     }
 
-    bool add_vertex(Vertex<T>* vertex) {        
-        vertices[n_vertex++] = vertex;
-        return true;
+    void add_vertex(Vertex<T>* vertex) {        
+        Graph_Vertex<T> add(vertex);
+        m_vertices.insert(add);
+        ++n_vertex;
     }
 
     void add_edge(T const& data0, T const& data1) {

@@ -4,10 +4,10 @@
 #include "unict-list/list.h"
 
 template <typename T>
-class Graph_Vertex : public List {
+class Graph_Vertex : public List<T> {
 public:
-    Graph_Vertex(T const& data) : List() {
-        List::insert(data);
+    Graph_Vertex(T const& data) : List<T>() {
+        List<T>::insert(data);
     }
 
     friend std::ostream& operator<<(std::ostream& out, Graph_Vertex<T> gl) {
