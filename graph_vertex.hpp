@@ -4,14 +4,14 @@
 #include "unict-list/list.h"
 
 template <typename T>
-class Graph_List : public List {
+class Graph_Vertex : public List {
 public:
-    Graph_List(T const& data) : List() {
+    Graph_Vertex(T const& data) : List() {
         List::insert(data);
     }
 
-    friend std::ostream& operator<<(std::ostream& out, Graph_List<T> gl) {
-        out << "Graph List with key" << gl.HEAD->get_data() << '\n'
+    friend std::ostream& operator<<(std::ostream& out, Graph_Vertex<T> gl) {
+        out << "Graph Vertex with key" << gl.HEAD->get_data() << '\n'
             << "\tAdjacency List: ";
         Node<T>* ptr = gl.HEAD;
         while (ptr) {
