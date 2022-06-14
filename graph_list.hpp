@@ -45,4 +45,9 @@ public:
             ptr = ptr->get_next();
         } return nullptr;
     }
+
+    friend std::ostream& operator<< (std::ostream& out, Graph_List<T>& gl) {
+        out << gl.m_vertices;
+        return out;
+    }
 };

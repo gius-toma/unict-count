@@ -10,7 +10,7 @@ public:
         List<T>::insert(data);
     }
 
-    friend std::ostream& operator<<(std::ostream& out, Graph_Vertex<T> gl) {
+    friend std::ostream& operator<<(std::ostream& out, Graph_Vertex<T>& gl) {
         out << "Graph Vertex with key" << gl.HEAD->get_data() << '\n'
             << "\tAdjacency List: ";
         Node<T>* ptr = gl.HEAD;
